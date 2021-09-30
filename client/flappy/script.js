@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bird.style.bottom = birdBottom + 'px'
         bird.style.left = birdLeft + 'px'
     }
-    let timerID = setInterval(startGame, 20)
+    let timerId = setInterval(startGame, 20)
 
     function control(e) {
         if (e.keyCode === 32) {
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     generateObstacle()
 
 
-    function GameOver() {
-        clearInterval(gameTimerId)
+    function gameOver() {
+        clearInterval(timerId)
         console.log('game over')
         isGameOver = true
         document.removeEventListener('keyup', control)
