@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded' , () => {
     const bird = document.querySelector('.bird')
     const gameDisplay = document.querySelector('.game-container')
     const ground = document.querySelector('.ground')
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bird.style.bottom = birdBottom + 'px'
         bird.style.left = birdLeft + 'px'
     }
-    let timerId = setInterval(startGame, 20)
+    let timerID = setInterval(startGame, 20)
 
     function control(e) {
         if (e.keyCode === 32) {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (obstacleLeft === -60) {
                 clearInterval(timerID)
                 gameDisplay.removeChild(obstacle)
-                gameDisplay.replaceChild(topObstacle)
+                gameDisplay.removeChild(topObstacle)
             }
             if (
                 obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function gameOver() {
-        clearInterval(timerId)
+        clearInterval(timerID)
         console.log('game over')
         isGameOver = true
         document.removeEventListener('keyup', control)
