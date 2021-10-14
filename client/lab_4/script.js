@@ -3,23 +3,23 @@ const slides = document.getElementsByClassName('carousel_item');
 const totalSlides = slides.length;
 
 document.
-    getElementById('carousel__button--next')
+    getElementById('carousel_button--next')
     .addEventListener("click", function() {
         moveToNextSlide();
     });
 document.
-    getElementById('carousel__button--prev')
+    getElementById('carousel_button--prev')
     .addEventListener("click", function() {
         moveToPrevSlide();
     });
 
     function updateSlidePosition() {
         for (let slide of slides) {
-            slide.classList.remove('carousel__item--visible');
-            slide.classList.add('carousel__item--hidden');
+            slide.classList.remove('carousel_item--visible');
+            slide.classList.add('carousel_item--hidden');
         }
 
-        slides[slidePosition].classList.add('carousel__item--visible');
+        slides[slidePosition].classList.add('carousel_item--visible');
     }
 
     function moveToNextSlide() {
