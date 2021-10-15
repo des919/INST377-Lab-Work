@@ -34,6 +34,7 @@
   background-color: #D6E9FE;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .header {
