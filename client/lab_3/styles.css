@@ -16,7 +16,8 @@
   border: 1px solid #fff;  /* For debugging */
   width: 900px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: relative;
 }
 
 .links {
@@ -87,15 +88,19 @@
 }
 
 .footer-item {
-  border: 1px solid #fff;
   background-color: #D6E9FE;
   height: 200px;
   flex: 1;
 }
 
+.footer-one {
+  background-color: #5995DA!important;
+  flex: initial;
+  width: 300px;
+}
+
 .footer-three {
-  flex: 2;
-  background-color: #5995DA;
+  background-color: #5995DA!important;
   flex: initial;
   width: 300px;
 }
