@@ -54,15 +54,15 @@ async function mainThread() {
         const html = matchArray.map(place => {
            return `
             <li>
-                <span class="name">${place.name}</span>
+                <span class="name">${place.name}</span><br>
 
-                <span class="name">${place.category}</span>
+                <span class="name">${place.category}</span><br>
             
-                <span class="name">${place.city}</span>
+                <span class="name">${place.city}</span><br>
             
-                <span class="name">${place.zip}</span>
+                <span class="name">${place.zip}</span><br>
 
-                <span class="name">${place.address_line_1}</span>
+                <span class="name">${place.address_line_1}</span><br>
             </li>
         `})
         target.innerHTML = html
