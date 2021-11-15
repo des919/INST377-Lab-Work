@@ -14,25 +14,20 @@ async function fetchRequest(url) {
     return err;
 }}
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-
 async function mainThread() {
     console.log('loaded main script');
     const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
     const inputBox = document.querySelector('#Zipcode');
     const target = document.querySelector('.suggestions');
-
-    // Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    const mymap = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoibHZkMzItIiwiYSI6ImNrdzE1YWVreDAwMDIydW5oeDBzajIxMHIifQ.ApBFhzz56jgEImI_wGU83Q'
+    }).addTo(mymap);
 
     /* Actually linked script example */
     const targetElement = document.querySelector('.click_demo');
@@ -83,6 +78,7 @@ async function mainThread() {
     }
 };
 window.onload = mainThread;
+
 
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
