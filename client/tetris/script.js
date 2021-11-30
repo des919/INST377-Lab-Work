@@ -62,3 +62,11 @@ let name = ['Desmond', 'Anna', 'Joy', 'Will']
 combineTableNames.forEach(name => {
     console.log(name + ' is the best!')
 })
+
+var tetrominoes = [tTetromino, zTetromino, lTetromino, oTetromino, iTetromino]
+
+console.log(tetrominoes.splice(2,2))
+
+var shapes = ['circle', 'square', 'triangle']
+
+console.log(tetrominoes.concat(shapes))
